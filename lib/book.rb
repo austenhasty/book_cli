@@ -3,16 +3,16 @@
 class Book
 
   # promps user for imput to query API and sort/limit return data
-    def self.get_books
-      # clears the screen
-      system("clear")
-      puts "Please enter what you are looking for today: "
-      puts ""
-      query = gets.chomp.downcase
-      results = Api.call_api(query)
+  def self.get_books
+    # clears the screen
+    system("clear")
+    puts "Please enter what you are looking for today: "
+    puts ""
+    query = gets.chomp.downcase
+    results = Api.call_api(query)
 
-      ReadingList.add_book_to_reading_list(results)
-    end
+    ReadingList.add_book_to_reading_list(results)
+  end
 
   # this search account for error messages from the API so the program doesn't crash. Helps control user input and API response
     def self.safe_search
