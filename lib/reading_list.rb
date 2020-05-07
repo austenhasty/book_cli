@@ -1,9 +1,9 @@
 
 
-class ReadingList
+class ReadingList < Book
 
   def initialize
-    @@reading_list = []
+    @reading_list = []
   end
 
 end
