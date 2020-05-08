@@ -2,11 +2,31 @@ require "spec_helper"
 require "book"
 
 describe Book do
-  describe ".get_books" do
-    it {expect(Book).to respond_to :get_books}
+
+let!(:harry) { Book.new("Harry Potter", "J.K. Rowling", "Publisher") }
+
+  describe "#new" do
+    it "takes in three arguments: a title, author, and publisher" do
+      expect{Book.new("Harry Potter", "J.K. Rowling", "Publisher")}.to_not raise_error
+    end
   end
 
-  describe ".safe_search" do
-    it {expect(Book).to respond_to :safe_search}
+  describe "#title" do
+    it "has a title" do
+      expect(harry.title).to eq("Harry Potter")
+    end
   end
+
+  describe "#author" do
+    it "has an author" do
+      expect(harry.author).to eq("J.K. Rowling")
+    end
+  end
+
+  describe "#publisher" do
+    it "has a publisher" do
+      expect(harry.publisher).to eq("Publisher")
+    end
+  end
+
 end
