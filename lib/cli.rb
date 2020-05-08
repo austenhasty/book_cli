@@ -7,7 +7,7 @@ class Cli
 
 
   def self.run_app
-    UserPrompts.new
+    user = UserPrompts.new
   end
 
 end
